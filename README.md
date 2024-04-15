@@ -40,8 +40,7 @@ Using `NMS2::Initialize()` creates a two-dimensional buffer that will contain va
 
 `NMS2::Tick()` subtracts from all of the values in the buffer each frame, meaning that values add up over time and diminish over time.
 
-> **Note**
-This type of algorithm works best in high-framerate sessions (more than 100 inferences per second) because `NMS2::Tick()` must deteriorate the buffer by a certain amount each frame.
+> This type of algorithm works best in high-framerate sessions (more than 100 inferences per second) because `NMS2::Tick()` must deteriorate the buffer by a certain amount each frame.
 
 `NMS2::AddRect(x1, y1, x2, y2)` adds a set of values to the buffer to represent a detection that *could* be valid. Notably, the values added to the buffer are minimal, meaning that a valid detection will only appear after multiple frames have been inferred.
 
