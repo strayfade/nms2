@@ -53,10 +53,13 @@ Using `NMS2::Initialize()` creates a two-dimensional buffer that will contain va
 
 // The threshold for a value in the buffer to count as a valid detection
 #define NMS_QUERY_THRESHOLD 0.5
+```
 
+The following options are used to control how fast a detection propogates and dissipates.
+```C++
 // The amount to add to the buffer for each presumed valid detection
-#define NMS2_ADD_AMOUNT 0.08f
+#define NMS2_WEIGHT_POSITIVE 0.08f
 
 // The amount to deteriorate the buffer every frame (should be increased if running at low framerates)
-#define NMS2_SUBTRACT_AMOUNT 0.05f
+#define NMS2_WEIGHT_NEGATIVE 0.05f
 ```

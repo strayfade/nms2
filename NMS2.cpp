@@ -21,7 +21,7 @@ void NMS2::Initialize() {
 void NMS2::Tick() {
 	for (int x = 0; x < NMS2_DIVISOR; x++) {
 		for (int y = 0; y < NMS2_DIVISOR; y++) {
-			NMS2Buffer[x][y] = MAX(0, NMS2Buffer[x][y] - NMS2_SUBTRACT_AMOUNT);
+			NMS2Buffer[x][y] = MAX(0, NMS2Buffer[x][y] - NMS2_WEIGHT_NEGATIVE);
 		}
 	}
 }
@@ -35,7 +35,7 @@ void NMS2::AddRect(float x1, float y1, float x2, float y2) {
 	y2 = round(Clamp(y2 * NMS2_DIVISOR, 0, NMS2_DIVISOR));
 	for (int x = x1; x < x2; x++) {
 		for (int y = y1; y < y2; y++) {
-			NMS2Buffer[x][y] = MIN(1, NMS2Buffer[x][y] + NMS2_ADD_AMOUNT);
+			NMS2Buffer[x][y] = MIN(1, NMS2Buffer[x][y] + NMS2_WEIGHT_POSITIVE);
 		}
 	}
 }

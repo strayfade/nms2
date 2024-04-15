@@ -6,8 +6,8 @@
 // See README.md for configuration options
 #define NMS2_DIVISOR 33
 #define NMS_QUERY_THRESHOLD 0.5
-#define NMS2_ADD_AMOUNT 0.08f
-#define NMS2_SUBTRACT_AMOUNT 0.05f
+#define NMS2_WEIGHT_POSITIVE 0.08f
+#define NMS2_WEIGHT_NEGATIVE 0.05f
 
 namespace NMS2 {
 	inline std::vector<std::vector<float>> NMS2Buffer;
